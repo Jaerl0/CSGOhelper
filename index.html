@@ -11,7 +11,66 @@
 </head>
 
 <body>
-
+    <header>
+        <h1>CSGO Inventory Builder</h1>
+        <input type="checkbox" id="colorTheme" onchange="changeTheme()">
+    </header>
+    <main>
+        <select id="selectType">
+            <option value="1">Pistols</option>
+            <option value="2">SMG</option>
+            <option value="3">Heavy</option>
+            <option value="4">Rifle</option>
+            <option value="5">Knife</option>
+        </select>
+        <select id="selectRifle">
+            <option value="1">AK-47</option>
+            <option value="2">M4A4</option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10"></option>
+            <option value="11"></option>
+        </select>
+        <select id="selectPistol">
+            <optgroup label="Assault Rifle">
+                <option value="1">FAMAS</option>
+                <option value="2">Galil AR</option>
+                <option value="3">AK-47</option>
+                <option value="4">M4A4</option>
+                <option value="5">M4A1-S</option>
+                <option value="6">AUG</option>
+                <option value="7">SG 553</option>
+            </optgroup>
+            <optgroup label="Sniper Rifle">
+                <option value="8">AWP</option>
+                <option value="9">SSG-08</option>
+                <option value="10">SCAR-20</option>
+                <option value="11">G3SG1</option>
+            </optgroup>
+        </select>
+        <select id="selectSMG">
+            <option value="1">MAC-10</option>
+            <option value="2">MP9</option>
+            <option value="3">MP7</option>
+            <option value="4">UMP-45</option>
+            <option value="5">P90</option>
+            <option value="6">PP-Bizon</option>
+            <option value="7">MP5-SD</option>
+        </select>
+        <select id="selectHeavy">
+            <option value="1">Nova</option>
+            <option value="2">XM1014</option>
+            <option value="3">Sawed-off</option>
+            <option value="4">MAG-7</option>
+            <option value="5">M249</option>
+            <option value="6">Negev</option>
+        </select>
+    </main>
 </body>
 
 </html>
