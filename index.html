@@ -13,10 +13,25 @@
 <body>
     <header>
         <h1>CSGO Inventory Builder</h1>
-        <input type="checkbox" id="colorTheme" onchange="changeTheme()">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
     </header>
     
+    <nav>   
+        <ul>
+            <a href="">Steam Market</a>
+            <a href="">Useful Sites</a>
+            <a href="">Lorem</a>
+            <a href="">Lorem</a>
+        </ul>
+    </nav>
+
     <main>
+        <form>
+        <input type="text" id="inputData">
+        </form>
         <select id="selectType" onchange="checkValue()">
             <option value="0" selected hidden>Type</option>
             <option value="1">Pistols</option>
@@ -25,7 +40,7 @@
             <option value="4">Rifle</option>
             <option value="5">Knife</option>
         </select>
-        <select id="selectPistol">
+        <select id="selectPistol" onchange="listPistols()">
             <option value="1">Glock-18</option>
             <option value="2">USP-S</option>
             <option value="3">P2000</option>
@@ -37,7 +52,7 @@
             <option value="9">Desert Eagle</option>
             <option value="10">R8 Revolver</option>
         </select>
-        <select id="selectRifle">
+        <select id="selectRifle" onchange="listRifle()">
             <optgroup label="Assault Rifle">
                 <option value="1">FAMAS</option>
                 <option value="2">Galil AR</option>
@@ -54,7 +69,7 @@
                 <option value="11">G3SG1</option>
             </optgroup>
         </select>
-        <select id="selectSMG">
+        <select id="selectSMG" onchange="listSMG()">
             <option value="1">MAC-10</option>
             <option value="2">MP9</option>
             <option value="3">MP7</option>
@@ -63,7 +78,7 @@
             <option value="6">PP-Bizon</option>
             <option value="7">MP5-SD</option>
         </select>
-        <select id="selectHeavy">
+        <select id="selectHeavy" onchange="listHeavy()">
             <option value="1">Nova</option>
             <option value="2">XM1014</option>
             <option value="3">Sawed-off</option>
@@ -71,6 +86,15 @@
             <option value="5">M249</option>
             <option value="6">Negev</option>
         </select>
+        <select id="quality">
+            <option value="">Factory New</option>
+            <option value="">Minimal Wear</option>
+            <option value="">Field Tested</option>
+            <option value="">Well worn</option>
+            <option value="">Battle Scared</option>
+        </select>
+
+        <p id="test"></p>
     </main>
 </body>
 

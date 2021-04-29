@@ -1,9 +1,29 @@
 
 
-// Item images 
-// fetch('https://api.steamapis.com/image/items/730')
+// // Item images 
+// fetch("https://api.steamapis.com/image/items/730/")
 //   .then(response => response.json())
-//   .then(data => console.log(data));
+//   .then(data => console.log(data))
+//   .then(console.log("Test" + response));
+
+   
+fetch('https://api.steamapis.com/image/items/730/')
+  .then((response) => {
+    return response.json();
+  })
+  .then((myJson) => {
+    document.querySelector("#test").innerHTML = myJson 
+    console.log(myJson)
+  });
+
+
+  // document.querySelector("form").addEventListener("submit", (event) => {
+  //   event.preventDefault();
+  //   let inputData = document.querySelector("#inputData").value 
+  //   let encode = encodeURI(inputData)
+  //   fetch("https://api.steamapis.com/image/items/730/" + encode)
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data))});
 
 
 
@@ -15,11 +35,13 @@
     var b = document.getElementById("selectSMG");
     var c = document.getElementById("selectHeavy");
     var d = document.getElementById("selectRifle");
+    var e = document.getElementById("quality");
 
     a.setAttribute("hidden", "");
     b.setAttribute("hidden", "");
     c.setAttribute("hidden", "");
     d.setAttribute("hidden", "");
+    e.setAttribute("hidden", "");
 
 function checkValue (){
   let weaponCathegory = document.getElementById("selectType").value;
@@ -35,6 +57,7 @@ function checkValue (){
       b.setAttribute("hidden", "");
       c.setAttribute("hidden", "");
       d.setAttribute("hidden", "");
+      e.removeAttribute("hidden", "");
     }
     
       else if(weaponCathegory == 2){
@@ -42,6 +65,7 @@ function checkValue (){
         b.removeAttribute("hidden", "");
         c.setAttribute("hidden", "");
         d.setAttribute("hidden", "");
+        e.removeAttribute("hidden", "");
     }
     
       else if(weaponCathegory == 3){
@@ -49,6 +73,7 @@ function checkValue (){
         b.setAttribute("hidden", "");
         c.removeAttribute("hidden", "");
         d.setAttribute("hidden", "");
+        e.removeAttribute("hidden", "");
     }
     
     else if(weaponCathegory == 4){
@@ -56,43 +81,11 @@ function checkValue (){
       b.setAttribute("hidden", "");
       c.setAttribute("hidden", "");
       d.removeAttribute("hidden", "");
+      e.removeAttribute("hidden", "");
     }
   }
-  return weaponCathegory;
 }
  
- 
-
-
-
-
-// var a = document.getElementById("selectPistol");
-// if (a.style.display === "none") {
-//   a.style.display = "block";
-// } else {
-//   a.style.display = "none";
-// }
-
-//   var b = document.getElementById("selectSMG");
-//   if (b.style.display === "none") {
-//     b.style.display = "block";
-//   } else {
-//     b.style.display = "none";
-//   }
-
-//   var c = document.getElementById("selectHeavy");
-//   if (c.style.display === "none") {
-//     c.style.display = "block";
-//   } else {
-//     c.style.display = "none";
-//   }
-
-//   var d = document.getElementById("selectRifle");
-//   if (d.style.display === "none") {
-//     d.style.display = "block";
-//   } else {
-//     d.style.display = "none";
-//   }
 
 
     
