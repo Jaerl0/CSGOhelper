@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <title>Document</title>
+</head>
+
+<body class="liveStream">
+    <a href="index.html" class="logo"><img class="logo" src="logo.png"
+            alt="Logo of Counter-strike Global-offensive"></a>
+    <header class="index">
+        <h1 id="title">Featured CSGO livestream</h1>
+    </header>
+
+    <nav>
+        <a href="tutorials.html">Tutorials</a>
+        <div class="dropdown">
+            <button class="dropbtn">Trade/Pricecheck</button>
+            <div class="dropdown-content">
+                <a href="https://cs.money/">CS.Money</a>
+                <a href="https://buff.163.com/">BUFF</a>
+                <a href="https://skinbaron.de/en">SkinBaron</a>
+                <a href="https://steamcommunity.com/market/search?appid=730">Steam Market</a>
+            </div>
+        </div>
+        <a href="liveStreams.html">Live Streams</a>
+        <a href="weapons.html">Weapon Data</a>
+        <a href="coinflip.html">Coinflip</a>
+
+    </nav>
+    <main class="liveStream">
+        <div id="twitch-embed"></div>
+    </main>
+
+    <script type="text/javascript">
+        var embed = new Twitch.Embed("twitch-embed", {
+            width: (window.innerWidth - 550),
+            height: (window.innerWidth - 900),
+            channel: "esl_csgo",
+            layout: "video",
+            autoplay: false,
+        });
+
+        embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+            var player = embed.getPlayer();
+            player.play();
+        });
+    </script>
+</body>
+
+</html>
