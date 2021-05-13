@@ -1,14 +1,15 @@
 body {
-  background: url("background.jpg");
+  background: url("img/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: 100%;
   margin-left: 50px;
   margin-right: 50px;
 }
 
 body.index {
   display: grid;
-  grid-template-rows: fit-content 100px fit-content 4fr 2fr;
+  grid-template-rows: fit-content 100px fit-content 4fr 1fr;
 }
 
 .logo {
@@ -20,17 +21,17 @@ body.index {
 
 header.index {
   background-color: rgba(64, 64, 64, 0.75);
+  border-top: orange solid 3px;
   grid-row: 2/3;
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
 }
 
 #title {
   grid-column: 2/3;
   text-align: center;
-  text-decoration: underline;
+  text-shadow: 2px 2px 2px orange;
   margin: 50px;
   font-family: "Quantico", "Changa", "Noto Sans", sans-serif;
+  font-size: 2.5vw;
 }
 
 /* nav styling */
@@ -39,7 +40,7 @@ nav {
   background-color: rgba(64, 64, 64, 0.75);
   grid-row: 3/4;
   display: flex;
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Quantico", "Changa", "Noto Sans", sans-serif;
   text-transform: uppercase;
   flex-direction: row;
@@ -111,63 +112,221 @@ a:hover {
   display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  /* background-color: #ddd; */
-}
-
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Styling for weapons.html */
-
-.index main {
+/* Styling for main in index.html */
+main.index {
+  display: grid;
+  grid-template-columns: 1f 1fr;
+  grid-template-rows: repeat(3, 1fr);
   background-color: rgba(64, 64, 64, 0.75);
   grid-row: 4/5;
   color: #f1f1f1;
+  word-wrap: normal;
   padding: 20px;
 }
 
-.weapons main {
+#first {
+  grid-column: 1/3;
+  height: fit-content;
+}
+
+#second {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  width: 50vw;
+}
+
+img#bloodsport {
+  align-self: flex-end;
+  float: right;
+  width: 250px;
+  height: 200px;
+}
+
+/* Styling for weapons.html */
+
+body.weapons {
+  display: grid;
+  grid-template-rows: fit-content 100px fit-content 4fr 2fr;
+}
+
+main.weapons {
   margin: 0;
+  padding: 0;
+  background-color: rgba(64, 64, 64, 0.75);
+}
+
+#list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(9, 200px);
 }
 
-header.weapons {
-  height: 100px;
+#searchField {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(64, 64, 64, 0.75);
+}
+
+#searchBar {
+  border: solid orange 1px;
+  border-radius: 1rem;
+  width: 50%;
+  margin: 5px;
+  height: 25px;
+}
+
+li {
+  height: min-content;
+  background-color: cornsilk;
+  padding: 5px;
+  border-top: orange solid 3px;
+  transition: transform 0.2s;
+  box-shadow: 0px 0px 4px black;
+}
+
+li:hover {
+  transform: scale(1.2);
+}
+
+ul {
+  margin-top: 3px;
+  list-style-type: none;
+  padding: 10px;
+  grid-gap: 10px;
 }
 
 .weapon {
-  margin: 5px;
   border: 1px solid black;
+  background-color: cornsilk;
 }
 
 /* Styling for tutorials.html */
 
 body.tutorial {
   display: grid;
-  grid-template-rows: fit-content 100px fit-content 4fr 2fr;
+  grid-template-rows: fit-content 100px fit-content fit-content;
+}
+
+main.tutorial {
+  text-align: center;
+  text-decoration: underline black;
+  color: orange;
+  display: grid;
+  font-size: 20px;
+  grid-gap: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row: 4/5;
+  background-color: rgba(64, 64, 64, 0.75);
+}
+
+#video {
+  width: 20vw;
+  height: 15vw;
 }
 
 /* Styling for liveStreams.html */
 
 body.liveStream {
   display: grid;
-  grid-template-rows: fit-content 100px fit-content 4fr 2fr;
+  grid-template-rows: fit-content 100px fit-content fit-content fit-content;
 }
 
 main.liveStream {
+  display: flex;
+  flex-direction: row;
   grid-row: 4/5;
   background-color: rgba(64, 64, 64, 0.75);
   justify-content: center;
 }
 
 #twitch-embed {
+  margin: 20px;
   border: 3px solid white;
-  justify-self: center;
   background-color: rgba(64, 64, 64, 0.75);
+}
+
+/* Footer styling */
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1f;
+  margin-top: 8px;
+  grid-row: 7/8;
+  height: 200px;
+  background-color: rgba(64, 64, 64, 0.75);
+  border-bottom: orange solid 3px;
+}
+
+footer * {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+}
+
+#socialMedia {
+  grid-column: 1/2;
+}
+
+#links {
+  grid-column: 3/4;
+}
+
+#copyright {
+  grid-column: 2/3;
+  align-self: end;
+}
+
+footer h2 {
+  color: orange;
+}
+
+/* @media to make it more reponsive */
+
+@media screen and (max-width: 950px) {
+  nav {
+    flex-direction: column;
+    font-size: 15px;
+  }
+  nav a {
+    margin-top: 5px;
+  }
+  .dropdown-content a {
+    font-size: 8px;
+  }
+  .dropbtn {
+    font-size: 15px;
+  }
+  .dropdown-content {
+    min-width: 100px;
+  }
+  #title {
+    margin: 20px;
+  }
+  body {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  #list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+    height: min-content;
+  }
+
+  main.tutorial {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
 }
