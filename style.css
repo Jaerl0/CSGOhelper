@@ -260,7 +260,7 @@ footer {
   grid-template-columns: 1fr 1fr 1f;
   margin-top: 8px;
   grid-row: 7/8;
-  height: 200px;
+  height: fit-content;
   background-color: rgba(64, 64, 64, 0.75);
   border-bottom: orange solid 3px;
 }
@@ -282,7 +282,7 @@ footer * {
 
 #copyright {
   grid-column: 2/3;
-  align-self: end;
+  color: white;
 }
 
 footer h2 {
